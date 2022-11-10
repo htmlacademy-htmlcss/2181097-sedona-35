@@ -38,11 +38,13 @@ body {
 }
 .page-header {
   display: flex;
+  z-index: 1;
+  position: relative;
 }
 .page-nav{
   display: flex;
-  padding: 30px;
   width: 507px;
+  align-items:center;
 }
 .navigation-logo{
   display: block;
@@ -73,7 +75,6 @@ body {
 }
 .navigation-link a{
   margin: 0;
-  padding: 16px;
   width: 339px;
   font-weight: 700;
   font-family: "PT Sans",sans-serif;
@@ -81,19 +82,28 @@ body {
   background-color:#ffffff;
   text-decoration:none;
   min-width: 100px;
-  min-height: 64px;
+  align-items: center;
+  position: relative;
+}
+.navigation-link+.navigation-link{
+  margin-left: 32px;
+}
+.navigation-link a:hover::after{
+  content: "";
+  border-bottom:  2px solid #756257;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: -20px
+
 }
 .navigation-user{
   width: 268px;
-  margin-left: auto;
   display: flex;
   padding: 0;
   min-width: 268px;
-  min-height: 64px;
   list-style-type: none;
-  margin-right: 70px;
-  margin-top: 14px;
-  margin-bottom: 14px;
+  margin: 0 70px 0 auto;
   align-items: center;
 }
 .navigation-item a {
@@ -107,7 +117,7 @@ body {
   text-decoration:none;
   margin: 0;
   padding: 0;
-
+  position: relative;
 }
 
 .navigation-item-search{
@@ -444,12 +454,31 @@ body {
 .form-button{
   display: flex;
   flex-grow: 0;
-
 }
 .subcribe-button{
   border-radius: 0 4px 4px 0;
   background-color: #83B3D3;
-  border-color: #82B3D3;
+  border: none;
+  color: #ffffff;
+  font-weight: 700;
+  font-family: "PT Sans",sans-serif;
+  font-size:20px;
+  line-height: 36px;
+  text-align: center;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  width: 232px;
+  }
+
+.subcribe-button:hover{
+  background-color: #68A2CA;
+}
+.subcribe-button:focus{
+  background-color: #68A2CA;
+}
+.subscribe-button:active{
+  color:rgba(255, 255, 255, 0.3);
+  background-color: #68A2CA;
 }
 .subscribe-form{
   margin: 0 auto;
@@ -524,15 +553,17 @@ body {
   height: 14px;
   display: flex;
 }
-.footer-social-button:hover{
-  background-color: #68A2CA;
+.footer-social-button svg{
+  fill: #83B3D3;
 }
-.footer-social-button:focus{
-  background-color: #68A2CA;
+.footer-social-button:hover svg{
+  fill: #68A2CA;
 }
-.footer-social-button:active{
-  background-color: #68A2CA;
-  color: rgba(255, 255, 255, 0.3);
+.footer-social-button:focus svg{
+  fill: #68A2CA;
+}
+.footer-social-button:active svg{
+  fill: rgba(104, 162, 202, 0.3);
 }
 .footer-social-icon{
   position: absolute;
@@ -542,19 +573,20 @@ body {
 .about-text{
   width: 142px;
 }
-.htmlacademy-link{
+.htmlacademy-link svg{
   display: flex;
   padding: 9px;
+  fill: #000000;
 }
-.htmlacademy-link:hover{
-  color:  #756157;
+.htmlacademy-link:hover svg{
+  fill:  #756157;
 }
-.htmlacademy-link:focus{
-  color:  #756157;
+.htmlacademy-link:focus svg{
+  fill:  #756157;
 }
 
-.htmlacademy-link:active{
-  color:  #756157;
+.htmlacademy-link:active svg{
+  fill: #756157;
 }
 .field{
   display:inline;
@@ -563,23 +595,32 @@ body {
   font-family: "PT Sans",sans-serif;
   font-size: 18px;
   line-height: 24px;
-  border-color: #ffffff;
+  width: 452px;
+}
+.field:hover{
+  background-color: #E6E6E6;
+}
+.field:focus{
+  border: 3px solid #83B3D3;
+  background-color: #E6E6E6;
+}
+.field:active{
+  background-color: #F2F2F2;
+  border: 2px solid #000000;
+  color: #000000;
+  font-weight: 700;
 }
 .field-max{
   border-radius: 0 4px 4px 0;
-}
-.subcribe-button{
-  font-weight: 700;
-  font-family: "PT Sans",sans-serif;
-  color:#000000;
-  background-color:#82B3D3;
-  font-size:20px;
-  line-height: 36px;
-  text-align: center;
-  text-transform: uppercase;
-  border-radius: 0 4px 4px 0;
+  width: 143px;
   box-sizing: border-box;
 }
+.field-min{
+  border-radius: 4px 0px 0px 4px;
+  width: 143px;
+  box-sizing: border-box;
+}
+
 
 .social-links{
   display: flex;
@@ -601,9 +642,16 @@ body {
   text-transform: uppercase;
   justify-content: center;
   display: flex;
-  width: 720px;
-  margin-top: 40px;
-  margin-bottom: 30px;
+  margin: 40px auto 30px;
+}
+.contact-phone:hover{
+  color: #756157;
+}
+.contact-phone:focus{
+  color: #756157;
+}
+.contact-phone:active{
+  color:  rgba(117, 97, 87, 0.3);
 }
 .subscribe-form{
   background-image: url("../images/mainpage/subscribe-background-photo.jpg");
@@ -635,7 +683,7 @@ body {
 .promo::after{
   content:"";
   background:url(/images/mainpage/hero-tail.svg) no-repeat center center/cover;
-  background-size: 1200px 57px;
+  background-size: 1210px 58px;
   background-repeat: no-repeat;
   width: 1200px;
   height: 57px;
@@ -645,9 +693,7 @@ body {
   z-index: 1;
   bottom: 0;
   overflow: hidden;
-  border-left: 1px solid white;
-  border-right: 1px solid white;
-
+  left: 0;
 }
 .visually-hidden {
   position: absolute;
@@ -817,10 +863,7 @@ padding: 0;
   margin: 0;
   padding: 0;
 }
-.field{
-  width: 143px;
-  box-sizing: border-box;
-}
+
 .min-max{
   width: 288px;
   height: 20px;
@@ -855,13 +898,7 @@ padding: 0;
   font-size: 20px;
   line-height: 24px;
 }
-.field{
-  font-weight: 700;
-  font-family: "PT Sans",sans-serif;
-  color:#000000;
-  font-size: 18px;
-  line-height: 24px;
-}
+
 .price-filter-title{
   font-weight: 700;
   font-family: "PT Sans",sans-serif;
@@ -1059,6 +1096,16 @@ padding: 0;
   margin-right: 20px;
   box-sizing: border-box;
 }
+.button-more:hover{
+background-color: #615048;
+}
+.button-more:focus{
+  background-color: #615048;
+}
+.button-more:active{
+  background-color:  #756157;
+  color:  rgba(255, 255, 255, 0.3);
+}
 
 .button-choose{
   font-weight: 700;
@@ -1078,6 +1125,16 @@ padding: 0;
   padding: 8px 8px;
   box-sizing: border-box;
 }
+.button-choose:hover{
+  background-color: #68A2CA;
+}
+.button-choose:focus{
+  background-color: #68A2CA;
+}
+.button-choose:active{
+  background-color:  #82B3D3;
+  color: rgba(255, 255, 255, 0.3);
+}
 .button-chosen{
   font-weight: 700;
   font-family: "PT Sans",sans-serif;
@@ -1095,6 +1152,16 @@ padding: 0;
   height: 36px;
   padding: 8px 8px;
   box-sizing: border-box;
+}
+.button-chosen:hover{
+  background-color: #6C9E42;
+}
+.button-chosen:focus{
+  background-color: #6C9E42;
+}
+.button-chosen:active{
+  background-color: #7DB54F;
+  color:  rgba(255, 255, 255, 0.3);
 }
 
 .rating-container{
@@ -1198,16 +1265,7 @@ padding: 0;
   justify-content:  center;
   align-items: center;
 }
-.pagination-link-current:hover{
-  background-color: #68A2CA;
-}
-.pagination-link-current:focus{
-  background-color: #68A2CA;
-}
-.pagination-link-current:active{
-  background-color:  #82B3D3;
-  color: rgba(255, 255, 255, 0.3);;
-}
+
 .pagination-link-more{
   font-weight: 700;
   font-family: "PT Sans",sans-serif;
