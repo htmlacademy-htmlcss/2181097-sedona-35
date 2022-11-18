@@ -302,7 +302,7 @@
     </main>
     <footer class="page-footer">
       <section class="subscribe-form-catalog">
-        <h2 class="footer-text">Подпишитесь на рассылку</h2>
+        <h2 class="footer-text footer-text-catalog">Подпишитесь на рассылку</h2>
         <p class="subscribe-description-catalog">Только полезная информация и никакого спама, честное бойскаусткое!</p>
         <form class="submit-form" action="https://echo.htmlacademy.ru/" method="post">
           <label class="visually-hidden" for="subscribe-email">Введите вашу электронную почту</label>
@@ -378,7 +378,7 @@
           <form class="search-form" action="https://echo.htmlacademy.ru/" method="post">
             <p class="field-group">
               <label class="search-field-title" for="date-checkin">Дата Заезда:</label>
-              <input class="search-form-field-one field" type="text" id="date-checkin" name="date-checkin" placeholder="27 апреля 2020">
+              <input class="search-form-field-one field" type="text" id="date-checkin" name="date-checkin" placeholder="27 апреля 2020" required>
               <button type="button" class="calendar">
                 <span class="visually-hidden">Иконка календаря.</span>
               </button>
@@ -386,7 +386,7 @@
             <span class="bug-report">Мы не можем отправить вас в прошлое.</span>
             <p class="field-group">
               <label class="search-field-title second-title" for="checkout-date">Дата Выезда:</label>
-              <input class="search-form-field-two field" type="text" id="checkout-date" name="date-checkout" placeholder="1 сентября 2023">
+              <input class="search-form-field-two field" type="text" id="checkout-date" name="date-checkout" placeholder="1 сентября 2023" required>
               <button type="button" class="calendar second-calendar-icon">
                 <span class="visually-hidden">Иконка календаря.</span>
               </button>
@@ -435,9 +435,8 @@
                 </div>
               </div>
             </div>
+            <button class="button search-modal-button" type="submit">Найти</button>
           </form>
-          <button class="button search-modal-button" type="submit">Найти</button>
-          <a class="button modal-search" href="#"></a>
         </section>
       </div>
     </div>

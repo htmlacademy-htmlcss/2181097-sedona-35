@@ -182,7 +182,7 @@
           <form class="search-form" action="https://echo.htmlacademy.ru/" method="post">
             <p class="field-group">
               <label class="search-field-title" for="date-checkin">Дата Заезда:</label>
-              <input class="search-form-field-one field" type="text" id="date-checkin" name="date-checkin" placeholder="27 апреля 2020">
+              <input class="search-form-field-one field" type="text" id="date-checkin" name="date-checkin" placeholder="27 апреля 2020" required>
               <button type="button" class="calendar">
                 <span class="visually-hidden">Иконка календаря.</span>
               </button>
@@ -190,7 +190,7 @@
             <span class="bug-report">Мы не можем отправить вас в прошлое.</span>
             <p class="field-group">
               <label class="search-field-title second-title" for="checkout-date">Дата Выезда:</label>
-              <input class="search-form-field-two field" type="text" id="checkout-date" name="date-checkout" placeholder="1 сентября 2023">
+              <input class="search-form-field-two field" type="text" id="checkout-date" name="date-checkout" placeholder="1 сентября 2023" required>
               <button type="button" class="calendar second-calendar-icon">
                 <span class="visually-hidden">Иконка календаря.</span>
               </button>
@@ -206,7 +206,7 @@
                         <path d="M0 0L0 2L14 2V0L0 0Z" />
                       </svg>
                     </button>
-                    <input class="guests-form-field field" type="number" id="kids-amount" name="kids-amount" placeholder="2">
+                    <input class="guests-form-field field" type="number" id="kids-amount" name="kids-amount" placeholder="2" required>
                     <button class="plus-guest">
                       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M14 6H8V0H6V6H0V8H6V14H8V8H14V6Z" />
@@ -230,7 +230,7 @@
                       <path d="M0 0L0 2L14 2V0L0 0Z" />
                     </svg>
                   </button>
-                  <input class="guests-form-field field" type="number" id="adults-amount" name="adults-amount" placeholder="2">
+                  <input class="guests-form-field field" type="number" id="adults-amount" name="adults-amount" placeholder="2" required>
                   <button class="plus-guest">
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M14 6H8V0H6V6H0V8H6V14H8V8H14V6Z" />
@@ -239,9 +239,8 @@
                 </div>
               </div>
             </div>
+            <button class="button search-modal-button" type="submit">Найти</button>
           </form>
-          <button class="button search-modal-button" type="submit">Найти</button>
-          <a class="button modal-search" href="#"></a>
         </section>
       </div>
     </div>
