@@ -107,6 +107,10 @@ body {
 	bottom: -20px
 }
 
+.navigation-link:active{
+  opacity: 0.6;
+}
+
 .navigation-user {
 	display: flex;
 	padding: 0;
